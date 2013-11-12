@@ -1,1 +1,26 @@
-This file was created by IntelliJ IDEA 12.1.6 for binding GitHub repository
+### developing a hybrid app ###
+
+Background:
+Apache Cordova emerged from PhoneGap. It's a library which lets you write apps in Html5+JS+CSS and does the wrapping
+to native code for you. If you install it via node.js, it also helps you set up projects from scratch. If you use
+IntelliJ or Eclipse, you can just build&run the app from your IDE, either on an Emulator or a real Android Device.
+
+Very helpful:
+Setup from scratch: http://cordova.apache.org/docs/en/3.1.0/guide_cli_index.md.html#The%20Command-line%20Interface
+Which phones (or emulators) are attached? call "adb devices"
+Want to use real Android Device? http://developer.android.com/tools/device.html
+
+Prerequisites:
+Node.js, Android SDK Manager, Ant, (OS-Driver for your Android phone)
+
+Avoiding Pitfalls:
++ Have sdk\tools, sdk\platform-tools and apache-ant-x.y.z\bin in your $PATH
++ AndroidManifest.xml:
+  - add android:debuggable="true" to <application ...>
+  - set <uses-sdk android:minSdkVersion="xx"/> to 15 or something similarly low
++ Before using real phone:
+  - download OS-driver
+  - set phone to debug mode
+  - set development sdk of project to whatever sdk your phone runs (install in Android SDK Manager first)
++ Before using emulator:
+  - create an AVD in Android SDK Manager and start it
